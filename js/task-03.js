@@ -15,6 +15,5 @@ const images = [
 
   const galleryContainer = document.querySelector('.gallery')
 
-  const makeGalleryImage = ({url, altText}) => {
-      const galleryImage = document.createElement('li')
-  }
+ images.forEach(el => {galleryContainer.insertAdjacentHTML('afterbegin', 
+ `<li><img src="${el.url} alt="${el.alt}" width="100" height = "100" /></li>`)})

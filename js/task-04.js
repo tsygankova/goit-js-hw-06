@@ -17,6 +17,5 @@ function decreaseValue (event) {
 function increaseValue (event) {
 counterValue +=1;
 refs.span.textContent = counterValue;
-
 }
 
