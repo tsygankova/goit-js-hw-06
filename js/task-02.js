@@ -19,6 +19,4 @@ const makeNewElements = options => {
 }
 
 const newMainElements = makeNewElements(ingredients);
-console.log(newMainElements);
-
 mainList.prepend(newMainElements)
