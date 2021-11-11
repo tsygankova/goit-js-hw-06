@@ -1,53 +1,21 @@
-
-// Напиши скрипт управления формой логина.
-
-// <form class="login-form">
-//   <label>
-//     Email
-//     <input type="email" name="email" />
-//   </label>
-//   <label>
-//     Password
-//     <input type="password" name="password" />
-//   </label>
-//   <button type="submit">Login</button>
-// </form>
-
-// Обработка отправки формы form.login-form должна быть по событию submit.
-// При отправке формы страница не должна перезагружаться.
-// Если в форме есть незаполненные поля, выводи alert с предупреждением о том, что все поля должны быть заполнены.
-// Если пользователь заполнил все поля и отправил форму, собери значения полей в обьект, где имя поля будет именем свойства, а значение поля - значением свойства. Для доступа к элементам формы используй свойство elements.
-// Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset.
-
-
-
-const refs ={
-    form: document.querySelector('.login-form'),
-    email: document.querySelector('#name'),
-    password: document.querySelector('#password')
-} 
-
-refs.form.addEventListener('submit', onFormSubmit);
+const formEl = document.querySelector('.login-form');
+  
+formEl.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event){
     event.preventDefault();
-    
-    if (!email.value){
-        alert(' please write your e-mail')
-    };
 
-    if (!password.value){
-        alert(' please write your password')
-    }
-
-    const formElements = event.currentTarget.elements;
+    if (!formEl.elements.email.value || !formEl.elements.password.value){
+        alert('Будь ласка, заповніть усі поля')
+    } 
+    else 
+    {const formElements = event.currentTarget.elements;
     const formObject = {
      email: formElements.email.value,
      password: formElements.password.value
-    }
-  console.log(formObject)
+    };
 
-
-
+    console.log(formObject);
+    formEl.reset()}
 }
 
